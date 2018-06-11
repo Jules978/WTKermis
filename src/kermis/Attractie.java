@@ -31,4 +31,8 @@ public class Attractie {
 
         return this.omzet;
     }
+    
+    int aantalKaartjes() {
+    return this.aantalKaartjes;
+    }
 }

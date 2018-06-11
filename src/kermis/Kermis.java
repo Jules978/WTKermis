@@ -100,7 +100,7 @@ public class Kermis {
                     ladderklimmen.draaien();
                     break;
                 case "k":
-                    int kaartVerkoop = kassa.aantalKaartjes(botsauto, hawaii, ladderklimmen, spiegelpaleis, spin, spookhuis);
+                    int kaartVerkoop = kassa.aantalKaartjes(attracties);
                     System.out.println("De totale kaartverkoop is " + kaartVerkoop + " kaartjes");
                     break;
                 case "o":

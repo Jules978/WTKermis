@@ -10,33 +10,40 @@ package kermis;
  * @author Julia
  */
 public class Ladderklimmen extends Attractie implements GokAttractie {
+
     String naam = "Ladderkllimmen";
     double oppervlakte;
     double prijs = 5.00;
     double omzet = 0;
     int aantalKaartjes = 0;
-    
-    void draaien(){
+
+    void draaien() {
         this.omzet += this.prijs;
         aantalKaartjes++;
-        System.out.println("De attracie " + naam +  " draait");
-    };
-    
-    public void kansSpelBelasting(){
-    //reserves 30% of omzet
+        System.out.println("De attracie " + naam + " draait");
     }
+
+    ;
     
+    public void kansSpelBelasting() {
+        //reserves 30% of omzet
+    }
+
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
     }
-    
-     String naam(){ 
-          return this.naam;
-      }
-     
-     double omzet() {
+
+    String naam() {
+        return this.naam;
+    }
+
+    double omzet() {
         return this.omzet;
     }
-    
+
+    int aantalKaartjes() {
+        return this.aantalKaartjes;
+    }
+
 }

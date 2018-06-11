@@ -10,6 +10,7 @@ package kermis;
  * @author Julia
  */
 public class Hawaii extends RisicoRijkeAttractie {
+
     String naam = "Hawaii";
     double oppervlakte;
     double prijs = 2.90;
@@ -17,17 +18,16 @@ public class Hawaii extends RisicoRijkeAttractie {
     int aantalKaartjes = 0;
 
     int draaiLimiet = 10;
-    
-    void draaien() throws DraaiLimietException{
-        if(this.opstellingsKeuring()){
-        this.omzet += this.prijs;
-        aantalKaartjes++;
-        
-        draaiLimiet--;
-        System.out.println("De attracie " + naam +  " draait");
-        }
-        else {
-        throw new DraaiLimietException(this);
+
+    void draaien() throws DraaiLimietException {
+        if (this.opstellingsKeuring()) {
+            this.omzet += this.prijs;
+            aantalKaartjes++;
+
+            draaiLimiet--;
+            System.out.println("De attracie " + naam + " draait");
+        } else {
+            throw new DraaiLimietException(this);
         }
     }
 
@@ -38,22 +38,26 @@ public class Hawaii extends RisicoRijkeAttractie {
             return false;
         }
     }
-    
-    boolean onderhoudsbeurt(){
-    this.draaiLimiet = 10;
-    return true;
+
+    boolean onderhoudsbeurt() {
+        this.draaiLimiet = 10;
+        return true;
     }
-    
+
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
     }
-    
-     String naam(){ 
-          return this.naam;
-      }
-     
-     double omzet() {
+
+    String naam() {
+        return this.naam;
+    }
+
+    double omzet() {
         return this.omzet;
+    }
+
+    int aantalKaartjes() {
+        return this.aantalKaartjes;
     }
 }

@@ -9,7 +9,7 @@ package kermis;
  *
  * @author Julia
  */
-public class Spin extends RisicoRijkeAttractie {
+public class Spin extends RisicoRijkeAttractie implements GokAttractie {
 
     String naam = "Spin";
     double oppervlakte;
@@ -23,7 +23,7 @@ public class Spin extends RisicoRijkeAttractie {
         if (this.opstellingsKeuring()) {
             this.omzet += this.prijs;
             aantalKaartjes++;
-            
+
             draaiLimiet--;
             System.out.println("De attracie " + naam + " draait");
         } else {
@@ -46,17 +46,25 @@ public class Spin extends RisicoRijkeAttractie {
         return true;
     }
 
+    public void kansSpelBelasting() {
+        //reserves 30% of omzet
+    }
+
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
     }
-    
-     String naam(){ 
-          return this.naam;
-      }
-     
-     double omzet() {
+
+    String naam() {
+        return this.naam;
+    }
+
+    double omzet() {
         return this.omzet;
+    }
+
+    int aantalKaartjes() {
+        return this.aantalKaartjes;
     }
 
 }

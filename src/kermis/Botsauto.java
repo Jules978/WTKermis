@@ -20,7 +20,7 @@ public class Botsauto extends Attractie {
     void draaien() {
         this.omzet += this.prijs;
         aantalKaartjes++;
-        
+
         System.out.println("De attracie " + naam + " draait");
 
     }
@@ -31,12 +31,16 @@ public class Botsauto extends Attractie {
     int aantalkaartjes() {
         return this.aantalKaartjes;
     }
-    
+
     String naam() {
-    return this.naam;
+        return this.naam;
     }
-    
+
     double omzet() {
         return this.omzet;
+    }
+
+    int aantalKaartjes() {
+        return this.aantalKaartjes;
     }
 }

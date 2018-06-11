@@ -10,30 +10,35 @@ package kermis;
  * @author Julia
  */
 public class Spookhuis extends Attractie {
+
     String naam = "Spookhuis";
     double oppervlakte;
     double prijs = 3.20;
     double omzet = 0;
     int aantalKaartjes = 0;
-    
-    void draaien(){
+
+    void draaien() {
         this.omzet += this.prijs;
         aantalKaartjes++;
-        
-        System.out.println("De attracie " + naam +  " draait");
-        System.out.println(this.omzet);
+
+        System.out.println("De attracie " + naam + " draait");
+
     }
-    
+
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
     }
-    
-     String naam(){ 
-          return this.naam;
-      }
-     
-     double omzet() {
+
+    String naam() {
+        return this.naam;
+    }
+
+    double omzet() {
         return this.omzet;
+    }
+
+    int aantalKaartjes() {
+        return this.aantalKaartjes;
     }
 }
