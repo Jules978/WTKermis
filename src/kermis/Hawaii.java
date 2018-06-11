@@ -13,7 +13,7 @@ public class Hawaii extends RisicoRijkeAttractie {
     String naam = "Hawaii";
     double oppervlakte;
     double prijs = 2.90;
-    double omzet;
+    double omzet = 0;
     int aantalKaartjes = 0;
 
     int draaiLimiet = 10;
@@ -22,7 +22,7 @@ public class Hawaii extends RisicoRijkeAttractie {
         if(this.opstellingsKeuring()){
         this.omzet += this.prijs;
         aantalKaartjes++;
-        Kassa.totaleOmzet  += this.prijs;
+        
         draaiLimiet--;
         System.out.println("De attracie " + naam +  " draait");
         }
@@ -47,5 +47,13 @@ public class Hawaii extends RisicoRijkeAttractie {
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
+    }
+    
+     String naam(){ 
+          return this.naam;
+      }
+     
+     double omzet() {
+        return this.omzet;
     }
 }

@@ -14,7 +14,7 @@ public class Spin extends RisicoRijkeAttractie {
     String naam = "Spin";
     double oppervlakte;
     double prijs = 2.25;
-    double omzet;
+    double omzet = 0;
     int aantalKaartjes = 0;
 
     int draaiLimiet = 5;
@@ -23,7 +23,7 @@ public class Spin extends RisicoRijkeAttractie {
         if (this.opstellingsKeuring()) {
             this.omzet += this.prijs;
             aantalKaartjes++;
-            Kassa.totaleOmzet += this.prijs;
+            
             draaiLimiet--;
             System.out.println("De attracie " + naam + " draait");
         } else {
@@ -49,6 +49,14 @@ public class Spin extends RisicoRijkeAttractie {
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
+    }
+    
+     String naam(){ 
+          return this.naam;
+      }
+     
+     double omzet() {
+        return this.omzet;
     }
 
 }

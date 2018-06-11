@@ -13,18 +13,27 @@ public class Spookhuis extends Attractie {
     String naam = "Spookhuis";
     double oppervlakte;
     double prijs = 3.20;
-    double omzet;
+    double omzet = 0;
     int aantalKaartjes = 0;
     
     void draaien(){
         this.omzet += this.prijs;
         aantalKaartjes++;
-        Kassa.totaleOmzet  += this.prijs;
+        
         System.out.println("De attracie " + naam +  " draait");
+        System.out.println(this.omzet);
     }
     
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
+    }
+    
+     String naam(){ 
+          return this.naam;
+      }
+     
+     double omzet() {
+        return this.omzet;
     }
 }

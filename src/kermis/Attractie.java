@@ -10,16 +10,25 @@ package kermis;
  * @author Julia
  */
 public class Attractie {
+
     String naam;
     double oppervlakte;
     double prijs;
     double omzet;
     int aantalKaartjes;
-    
-    void draaien(){
+
+    void draaien() {
         this.omzet += this.prijs;
         aantalKaartjes++;
-        System.out.println("De attracie " + naam +  " draait");
-    };
+        System.out.println("De attracie " + naam + " draait");
+    }
 
+    String naam() {
+        return this.naam;
+    }
+
+    double omzet() {
+
+        return this.omzet;
+    }
 }

@@ -5,6 +5,7 @@
  */
 package kermis;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -20,12 +21,21 @@ public class Kermis {
         boolean gameOn = true;
 
         Kassa kassa = new Kassa();
+        BelastingInspecteur bInspecteur = new BelastingInspecteur();
         Botsauto botsauto = new Botsauto();
         Spin spin = new Spin();
         Spiegelpaleis spiegelpaleis = new Spiegelpaleis();
         Spookhuis spookhuis = new Spookhuis();
         Hawaii hawaii = new Hawaii();
         Ladderklimmen ladderklimmen = new Ladderklimmen();
+
+        ArrayList<Attractie> attracties = new ArrayList<Attractie>();
+        attracties.add((Attractie) botsauto);
+        attracties.add((Attractie) spin);
+        attracties.add((Attractie) spiegelpaleis);
+        attracties.add((Attractie) spookhuis);
+        attracties.add((Attractie) hawaii);
+        attracties.add((Attractie) ladderklimmen);
 
         Scanner reader = new Scanner(System.in);
 
@@ -39,6 +49,7 @@ public class Kermis {
         System.out.println("type o om de omzet te zien");
         System.out.println("type k om het aantal verkochte kaartjes te zien");
         System.out.println("type o om de totale omzet te zien");
+        System.out.println("type b om de belastinginspecteur langs te laten komen");
         System.out.println("type q om te stoppen");
 
         while (gameOn) {
@@ -57,9 +68,10 @@ public class Kermis {
                         String antwoord = reader.nextLine();
                         if (antwoord.equals("o")) {
                             boolean a = dle.spin.onderhoudsbeurt();
-                            if(a)System.out.println("onderhoudsbeurt is uitgevoerd.");
+                            if (a) {
+                                System.out.println("onderhoudsbeurt is uitgevoerd.");
+                            }
                         };
-
                     }
                     break;
                 case "3":
@@ -77,7 +89,9 @@ public class Kermis {
                         String antwoord = reader.nextLine();
                         if (antwoord.equals("o")) {
                             boolean a = dle.hawaii.onderhoudsbeurt();
-                             if(a)System.out.println("onderhoudsbeurt is uitgevoerd.");
+                            if (a) {
+                                System.out.println("onderhoudsbeurt is uitgevoerd.");
+                            }
                         };
 
                     }
@@ -85,17 +99,21 @@ public class Kermis {
                 case "6":
                     ladderklimmen.draaien();
                     break;
-                case "q":
-                    System.out.println("BYE!!");
-                    gameOn = false;
-                    break;
                 case "k":
                     int kaartVerkoop = kassa.aantalKaartjes(botsauto, hawaii, ladderklimmen, spiegelpaleis, spin, spookhuis);
                     System.out.println("De totale kaartverkoop is " + kaartVerkoop + " kaartjes");
                     break;
                 case "o":
-                    double omzet = kassa.omzet();
-                    System.out.println("De totale omzet is " + omzet + " euro");
+                    kassa.omzet(attracties);
+                    
+                    break;
+                case "b":
+                    System.out.println("De belastinginspecteur komt langs.");
+                    bInspecteur.inspectie(attracties, kassa);
+                    break;
+                case "q":
+                    System.out.println("BYE!!");
+                    gameOn = false;
                     break;
                 default:
                     System.out.println("verkeerde input, probeer het nog een keer");

@@ -13,7 +13,7 @@ public class Ladderklimmen extends Attractie implements GokAttractie {
     String naam = "Ladderkllimmen";
     double oppervlakte;
     double prijs = 5.00;
-    double omzet;
+    double omzet = 0;
     int aantalKaartjes = 0;
     
     void draaien(){
@@ -29,6 +29,14 @@ public class Ladderklimmen extends Attractie implements GokAttractie {
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
+    }
+    
+     String naam(){ 
+          return this.naam;
+      }
+     
+     double omzet() {
+        return this.omzet;
     }
     
 }

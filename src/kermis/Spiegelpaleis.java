@@ -13,19 +13,27 @@ public class Spiegelpaleis extends Attractie {
     String naam = "Spiegelpaleis";
     double oppervlakte;
     double prijs = 2.75;
-    double omzet;
+    double omzet = 0;
     int aantalKaartjes = 0;
     
     void draaien(){
         this.omzet += this.prijs;
         aantalKaartjes++;
-        Kassa.totaleOmzet  += this.prijs;
+       
         System.out.println("De attracie " + naam +  " draait");
     }
     
     //field return methods here
     int aantalkaartjes() {
         return this.aantalKaartjes;
+    }
+    
+     String naam(){ 
+          return this.naam;
+      }
+     
+     double omzet() {
+        return this.omzet;
     }
 
 }
